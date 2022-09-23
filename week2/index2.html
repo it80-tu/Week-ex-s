@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Admin</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Webmaster</th>
+            <td>examp@mail.com</td>
+            <td>Kouvola</td>
+            <td>x</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <th>Misterweb</th>
+            <td>ekas@mail.com</td>
+            <td>Helsinki</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Webinator</th>
+            <td>webs@mail.com</td>
+            <td>Imatra</td>
+            <td>-</td>
+          </tr>
+          <tr>
+           <th>Weber</th>
+           <td>weber@mail.com</td>
+           <td>Lahti</td>
+           <td>-</td>
+          </tr>
+        </tbody>
+      </table>   
+      <form name="feedback" method="POST" action="/feedback.php">
+    <div>Input-username</div>
+    <input type="text" name="name" required="required">
+    <div>Input-email</div>
+    <input type="email" name="email" required="required">
+    <div>Input-address</div>
+    <input type="address" name="address" required="required">
+    <div>Input-admin</div>
+    <input type="admiin" name="admin" required="required">
+    <input type="submit" name="submit_btn" value="Submit-data">
+<button type="reset">Empty-table</button>
+  </form>
+</body>
+
+  
+</html>
