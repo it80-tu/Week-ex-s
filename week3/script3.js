@@ -37,10 +37,16 @@ const table = document.querySelector('.data');
     .then(json)
     .then(function(data) {
       data.dataset.value.map(val=>employment.push(val));
-      for (let i=0;i<employment.length;i++){
-        let newTd = document.createElement('td')
-        newTd.textContent = employment[i];
-        document.getElementsByTagName('tr').appendChild(newTd);
+      let trs = document.querySelectorAll('tbody tr');
+      let i = 0;
+      for (let tr of trs){
+        let newTd3 = document.createElement('td')
+        newTd3.textContent = employment[i];
+        tr.appendChild(newTd3);
+        let newTd4 = document.createElement('td')
+        newTd4.textContent = (Math.round((employment[i]/values[i])*10000))/100 + '%';
+        tr.appendChild(newTd4);
+        i++
     }
     }).catch(function(error) {  
       console.log('Request failed', error);  
