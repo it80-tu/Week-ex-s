@@ -51,3 +51,4 @@ const table = document.querySelector('.data');
     }).catch(function(error) {  
       console.log('Request failed', error);  
     });
+    
