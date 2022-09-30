@@ -17,6 +17,7 @@ function fetching(){
 .then(status)  
 .then(json)  
 .then(function(data) {
+    document.querySelector('.show-data').innerHTML='';
     data.map(film => {
         let elem =`<img src="${film.show.image.medium}"><div class="show-info"><h1>${film.show.name}</h1><p>${film.show.summary}</p></div>`;
         document.querySelector('.show-data').innerHTML+=elem;
