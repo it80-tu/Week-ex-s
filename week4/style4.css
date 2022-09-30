@@ -24,8 +24,13 @@ body{
 @media (max-width: 800px) {
     .show-data{
         display: flex;
+        flex-wrap: wrap;
     }
     .show-info{
+        text-align: center;
         padding: 10px;
+    }
+    .show-data img{
+        margin: auto;
     }
 }

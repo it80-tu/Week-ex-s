@@ -11,12 +11,13 @@ function json(response) {
 }
 document.querySelector('#submit-data').onclick = fetching;
 
-function fetching(){
+function fetching(){   
    let word = document.querySelector('#input-show').value;
   fetch(`https://api.tvmaze.com/search/shows?q=${word}`)  
 .then(status)  
 .then(json)  
 .then(function(data) {
+    console.log(data)
     document.querySelector('.show-data').innerHTML='';
     data.map(film => {
         let elem =`<img src="${film.show.image.medium}"><div class="show-info"><h1>${film.show.name}</h1><p>${film.show.summary}</p></div>`;
