@@ -9,15 +9,19 @@ function status(response) {
 function json(response) {  
   return response.json()  
 }
-function fetching(id,word){
+document.querySelector('#submit-data').onclick = fetching;
+
+function fetching(){
+   let word = document.querySelector('#input-show').value;
   fetch(`https://api.tvmaze.com/search/shows?q=${word}`)  
 .then(status)  
 .then(json)  
 .then(function(data) {
-    console.log(data)
-    document.querySelector('.show-data').innerHTML = `<img src="${data[id].show.image.medium}"><div class="show-info"><h1>${data[id].show.name}</h1><p>${data[id].show.summary}</p></div>`  
+    data.map(film => {
+        let elem =`<img src="${film.show.image.medium}"><div class="show-info"><h1>${film.show.name}</h1><p>${film.show.summary}</p></div>`;
+        document.querySelector('.show-data').innerHTML+=elem;
+    })
+        
 }).catch(function(error) {  
 console.log('Request failed', error);  
-});
-}
-fetching(0,'friends');
+})};
