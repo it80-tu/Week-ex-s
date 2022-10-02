@@ -18,6 +18,7 @@ const table = document.querySelector('.data');
     .then(status)  
     .then(json)  
     .then(function(data) {
+        console.log(data)
       municipallities = data.dataset.dimension.Alue.category.label;
       data.dataset.value.map(val=>values.push(val));
       Object.values(municipallities).map(el=>mun.push(el))
