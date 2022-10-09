@@ -1,19 +1,44 @@
-function status(response) {  
-    if (response.status >= 200 && response.status < 300) {  
-      return Promise.resolve(response)  
-    } else {  
-      return Promise.reject(new Error(response.statusText))  
-    }  
+
+const fetchData = async () => {
+  const url = "./week5/lut.geojson"
+  const res = await fetch(url)
+  const data = await res.json
+
+  initMap(data)
+};
+
+const initMap =  (data) => {
+  let map = L.map('map', {
+    minZoom: -3
+  })
+
+  let geoJson = L.geoJson(data, {
+    onEachFeature: getFeature,
+    style: getStyle
+
+  }). addTo(map)
+let osm =  L.titlelayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: -3,
+  attribution:"OpenStreetMap"
+}).addTo(map);
+
+map.fitBounds(geoJson.getBounds())
+}
+
+const
+
+const getFeature = (feature, layer) =>{
+
+  if (feature.properies.id) return;
+  const id = feature.properies.id
+  console.log(id)
+  layer.bindPopup("Hello " + id)
+}
+
+getStyle = (feature) => {
+  return {
+    color: 
   }
-  
-  function json(response) {  
-    return response.json()  
-  }
-fetch('https://geo.stat.fi/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=tilastointialueet:kunta4500k&outputFormat=json&srsName=EPSG:4326')
-.then(status)
-.then(json)  
-.then(function(data) {
-    console.log(data);
-}).catch(function(error) {  
-  console.log('Request failed', error);  
-});
+}
+
+fetchData()
