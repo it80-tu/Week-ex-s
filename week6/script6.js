@@ -13,7 +13,13 @@ fetch('https://statfin.stat.fi/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12d
     .then(status)
     .then(json)
     .then(function(data) {
-        console.log(data)
+        console.log(data);
+        console.log(data.variables[0].valueTexts);
+        let html = document.querySelector('.data');
+        for (let i in data.variables[0].valueTexts){
+            html.innerHTML+=' '+data.variables[0].valueTexts[i]; // a = a + b === a+=b
+        }
+        
     }).catch(function(error) {  
         console.log('Request failed', error);  
     });
