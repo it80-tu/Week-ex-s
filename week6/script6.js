@@ -14,12 +14,7 @@ fetch('https://statfin.stat.fi/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12d
     .then(json)
     .then(function(data) {
         console.log(data);
-        console.log(data.variables[0].valueTexts);
-        let html = document.querySelector('.data');
-        for (let i in data.variables[0].valueTexts){
-            html.innerHTML+=' '+data.variables[0].valueTexts[i];
-        }
-        
+        console.log(data.variables[0].valueTexts);        
     }).catch(function(error) {  
         console.log('Request failed', error);  
     });
