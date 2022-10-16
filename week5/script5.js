@@ -43,43 +43,6 @@ const initMap = (data) => {
 
 }
 
-const lutBuildings = [
-    {
-        name: "Building 1",
-        year: 1972,
-        color: "#ffcc00"
-    },
-    {
-        name: "Building 2",
-        year: 1982,
-        color: "#333333"
-    },
-    {
-        name: "Building 3",
-        year: 1989,
-        color: "#888888"
-    },
-    {
-        name: "Building 4",
-        year: 1995,
-        color: "#0000ff"
-    },
-    {
-        name: "Building 5",
-        year: 1999,
-        color: "#ff0088"
-    },
-    {
-        name: "Building 6",
-        year: 2001,
-        color: "#ff0000"
-    },
-    {
-        name: "Building 7",
-        year: 2004,
-        color: "#eeff00"
-    },
-]
 
 const getFeature = (feature, layer) => {
     if (!feature.properties.id) return;
