@@ -69,35 +69,34 @@ const getData = async () => {
 
     return data
 }
-
 const buildChart = async () => {
     const data = await getData()
-    //console.log(data)
+    console.log(data.dimension)
 
-    const parties = Object.values(data.dimension.Puolue.category.label);
     const labels = Object.values(data.dimension.Vuosi.category.label);
-    const values = data.value;
+    const country = Object.values(data.dimension.Alue.category.label);
+    const values = Object.values(data.dimension.Tiedot.category.label);
     
-    //console.log(parties)
-    //console.log(labels)
-    //console.log(values)
+    console.log(labels)
+    console.log(country)
+    console.log(values)
 
-    parties.forEach((party, index) => {
+    country.forEach((party, index) => {
         let partySupport = []
         for(let i = 0; i < 10; i++) {
             partySupport.push(values[i * 8 + index])
         }
-        parties[index] = {
+        country[index] = {
             name: party,
             values: partySupport.reverse()
         }
     })
 
-    //console.log(parties)
+    //console.log(country)
 
     const chartData = {
         labels: labels,
-        datasets: parties
+        datasets: country
     }
 
     const chart = new frappe.Chart("#chart", {

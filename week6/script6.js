@@ -13,8 +13,16 @@ fetch('https://statfin.stat.fi/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12d
     .then(status)
     .then(json)
     .then(function(data) {
-        console.log(data);
-        console.log(data.variables[0].valueTexts);        
+    console.log(data.variables);
+
+    const labels = Object.values(data.variables[0].values);
+    const country = Object.values(data.variables[1].values);
+    const values = Object.values(data.variables[2].values); 
+    
+    console.log(labels)
+    console.log(country)
+    console.log(values)
+
     }).catch(function(error) {  
         console.log('Request failed', error);  
     });
