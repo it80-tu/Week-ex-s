@@ -23,7 +23,10 @@ fetch('https://statfin.stat.fi/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12d
     console.log(country)
     console.log(values)
 
+
+
     }).catch(function(error) {  
         console.log('Request failed', error);  
     });
+    
     
