@@ -57,6 +57,17 @@ const jsonQuery = {
     }
   }
 
+let totalBirth = [];
+let maleBirth = [];
+let femaleBirth = [];
+
+let totalDeath = [];
+let maleDeath = [];
+let femaleDeath = [];
+
+let yearsBirth = [];
+let yearsDeath = [];
+
 const getBirth = async () => {
     const url = "https://statfin.stat.fi:443/PxWeb/api/v1/en/StatFin/synt/statfin_synt_pxt_12dj.px"
 
@@ -71,6 +82,16 @@ const getBirth = async () => {
     const data = await res.json();
 
     console.log(data);
+
+    for (let i = 0; i<data.value.length;i+=3){
+        totalBirth.push(data.value[i]);
+        maleBirth.push(data.value[i+1]);
+        femaleBirth.push(data.value[i+2])
+    }
+    Object.values(data.dimension.Vuosi.category.label).map(year => yearsBirth.push(year));
+    
+    DrawTotalBirth();
+    DrawCompareBirth();
 
     return data;
 }
@@ -87,9 +108,17 @@ const getDeath = async () => {
         return;
     }
     const data = await res.json();
-
     console.log(data);
 
+    for (let i = 0; i<data.value.length;i+=3){
+        totalDeath.push(data.value[i]);
+        maleDeath.push(data.value[i+1]);
+        femaleDeath.push(data.value[i+2])
+    }
+    Object.values(data.dimension.Vuosi.category.label).map(year => yearsDeath.push(year));
+    DrawTotalDeath();
+    DrawCompareDeath();
+    
     return data;
 }
 
