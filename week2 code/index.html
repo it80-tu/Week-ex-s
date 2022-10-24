@@ -1,90 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/script.js"></script>
     <title>Table</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Address</Address></th>
-            <th>Admin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Webmaster</td>
-            <td>example@email.com</td>
-            <td>Demoland123</td>
-            <td>X</td>
-          </tr>
-          <tr>
-            <td>User123</td>
-            <td>example@email.com</td>
-            <td>Userplace321</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Anotheruser222</td>
-            <td>example@email.com</td>
-            <td>Another place 21</td>
-            <td>-</td>
-          </tr>
-          
-        
-        </tbody>
-      </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Admin</th>
+                </tr>
+            </thead>
+            <tbody class="table">
 
-      <!--<pre>Line 
-            Break
-        </pre>-->
+            </tbody>
+        </table>
 
-      <h2>Leave a note</h2>
-      <!--<form action="" method="GET">-->
-      <fieldset>
-        <legend>Information:</legend>
-        <label for="fname">Username:</label>
-        <input type="text" name="uname" id="uname" placeholder="Username" />
-        <label for="lname">Email:</label>
-        <input type="text" name="mail" id="mail" placeholder="Email" />
-        <label for="addr">Address:</label>
-        <input type="text" name="address" id="address" placeholder="Address" />
-        <label for="adm">Admin:</label>
-        <input type="text" name="adm" id="admin" placeholder="Admin"
-      </fieldset>
+        <h2>Leave a note</h2>
+        <fieldset>
+            <legend>Information:</legend>
+            <label>Username:</label>
+            <input type="text" id="uname" placeholder="Username" />
+            <label>Email:</label>
+            <input type="text" id="mail" placeholder="Email" />
+            <label>Address:</label>
+            <input type="text" id="address" placeholder="Address" />
+            <label>Admin:</label>
+            <input type="checkbox" id="admin">
+        </fieldset>
 
-      <label for="mood">Interface experience:</label>
-      <select id="mood" name="mood">
-        <option value="">Good</option>
-        <option value="bad">Bad</option>
-      </select>
-      <br />
+        <label for="mood">Interface experience:</label>
+        <select id="mood" name="mood">
+            <option value="">Good</option>
+            <option value="bad">Bad</option>
+        </select>
+        <br />
 
-      <textarea
-        name="message"
-        id="message"
-        rows="10"
-        cols="30"
-        placeholder="Your opinion matters"
-      ></textarea>
+        <textarea name="message" id="message" rows="10" cols="30" placeholder="Your opinion matters"></textarea>
 
-      <!--<input type="submit" value="Submit">-->
-      <button id="add-note">Add note</button>
-      <button id="remove-note">Remove note</button>
-
-      <!--</form>-->
-      <div id="notes"></div>
+        <!--<input type="submit" value="Submit">-->
+        <button id="add-note">Add note</button>
+        <button id="remove-note">Remove note</button>
+        <div id="notes"></div>
     </main>
 
     <footer>
-      <p> Data base <span class="red">table</Table></span> </p>
+        <p> Data base <span class="red">table</Table></span></p>
     </footer>
-  </body>
+    <script src="script.js" defer></script>
+</body>
+
 </html>
